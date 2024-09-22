@@ -1,7 +1,6 @@
 require('dotenv').config({path:'variables.env'});
 const express = require('express');
 const app = express();
-const contactRoute = require('./routes/index');
 const {connectToDatabase} = require("./db/connect");
 
 /*******STARTING/SETTING UP APP CONNECTIONS*******/
@@ -14,7 +13,7 @@ app.use(express.json())
         res.append('Access-Control-Allow-Headers', 'Content-Type');
         next();
     })
-    .use('/contact', contactRoute);
+    .use('/', require('./routes/index'));
 
 //Start server on port 8080
 //Establish a connection with mongoDB so requests can be handled
