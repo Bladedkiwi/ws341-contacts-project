@@ -1,4 +1,5 @@
 const {getDb} = require("../db/connect");
+const {ObjectId} = require("mongodb");
 
 
 //TODO: Make one location for error handling instead of repetitively writing error responses.
@@ -25,7 +26,8 @@ async function getContacts(req,res) {
 async function getContactsById(req,res) {
     try {
         const _db = getDb();
-        const contact = await _db.collection('contacts').findOne({_id:req.params.id});
+        // Find Contact by their ID
+        const contact = await _db.collection('contacts').findOne({ "_id": new ObjectId(req.params.id) });
         if (contact) {
             res.status(200).send(contact);
         } else {
