@@ -12,8 +12,8 @@ async function connectToDatabase() {
         await client.connect();
         console.log("Connected to MongoDB");
 
-        // Storing USERS DB
-        _db = client.db('users');
+        // Storing USERS DB -> Contacts
+        _db = client.db('users').collection('contacts');
 
     } catch (err) {
         console.error("Failed to connect to MongoDB: ", err);
