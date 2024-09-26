@@ -6,6 +6,7 @@ const cors = require('cors');
 const {urlencoded} = require('express');
 
 /*******STARTING/SETTING UP APP CONNECTIONS*******/
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@${process.env.MONGO_URL}`
 
 //Parse Incoming Requests, Set Headers, Set Route
 app.use(express.json())
@@ -16,5 +17,5 @@ app.use(express.json())
 //Establish a connection with mongoDB so requests can be handled
 app.listen(process.env.PORT, async () => {
     console.log(`Server running on port ${process.env.PORT}`);
-    await connectToDatabase();
+    await connectToDatabase(uri);
 });
