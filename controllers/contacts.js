@@ -49,19 +49,20 @@ async function updateById(req,res) {
         const _db = await getDb();
 
         //Prepare contact to update
-        const updateContact =
-            {
-                birthday: req.body.birthday,
-                email: req.body.email,
-                favoriteColor: req.body.favoriteColor,
-                firstName: req.body.firstName,
-                lastName: req.body.lastName
-            }
+        //Check whether a field needs updated and adjust
+        const requests = {
+            ...(req.body.birthday !== null && req.body.birthday !== undefined && { birthday: req.body.birthday }),
+            ...(req.body.email !== null && req.body.email !== undefined && { email: req.body.email }),
+            ...(req.body.favoriteColor !== null && req.body.favoriteColor !== undefined && { favoriteColor: req.body.favoriteColor }),
+            ...(req.body.firstName !== null && req.body.firstName !== undefined && { firstName: req.body.firstName }),
+            ...(req.body.lastName !== null && req.body.lastName !== undefined && { lastName: req.body.lastName })
+        }
+        //Update Contact by searching for the ID
+        const contact = await _db.findOneAndUpdate({ _id: new ObjectId(req.params.id) }, {$set: requests}, { upsert: true}, {returnDocument: "after"});
 
-        const contact = await _db.findOneAndUpdate({ _id: new ObjectId(req.params.id) }, {$set: updateContact}, { upsert: true}, {returnDocument: "after"});
-
-        if (contact) {
-            res.status(200).send(await _db.find().toArray());
+        //Check that contact is good to go and send success message
+        if (contact._id) {
+        res.status(200).send("Contact Successfully Updated");
         } else {
             res.status(404).send('Delete Contact Failed');
         }

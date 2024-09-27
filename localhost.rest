@@ -1,0 +1,48 @@
+DELETE http://localhost:8080/contact/66f367084eb6f1eda2c6341c
+Content-Type: application/json
+
+###
+POST http://localhost:8080/contact
+Content-Type: application/x-www-form-urlencoded
+
+birthday = 3/2/08 &
+email = dogslikefood@dogman.com &
+favoriteColor = pink &
+firstName = Snow &
+lastName = Ball
+
+###
+PUT http://localhost:8080/contact/66f5876325fb5f6bec638f81
+Content-Type: application/x-www-form-urlencoded
+
+
+email = iamsunshine@thesun.com
+
+
+###
+GET https://ws341-contacts-project.onrender.com/
+Accept: application/json
+
+
+###
+GET https://ws341-contacts-project.onrender.com/contact
+Accept: application/json
+
+
+###
+GET https://ws341-contacts-project.onrender.com/contact/66ef62da7e72090e14f4ae04
+Accept: application/json
+
+###
+GET http://localhost:8080
+Accept: application/json
+
+
+###
+GET http://localhost:8080/contact
+Accept: application/json
+
+
+###
+GET http://localhost:8080/contact/66ef62da7e72090e14f4ae04
+Accept: application/json

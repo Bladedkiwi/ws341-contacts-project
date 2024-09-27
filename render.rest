@@ -1,0 +1,38 @@
+###
+GET https://ws341-contacts-project.onrender.com/
+Accept: application/json
+
+###
+GET https://ws341-contacts-project.onrender.com/contact
+Accept: application/json
+
+###
+GET https://ws341-contacts-project.onrender.com/contact/66ef62da7e72090e14f4ae04
+Accept: application/json
+
+###
+DELETE https://ws341-contacts-project.onrender.com/66f365303cbb0d545fc12ac0
+Content-Type: application/json
+
+###
+POST https://ws341-contacts-project.onrender.com/contact
+Content-Type: application/x-www-form-urlencoded
+
+birthday = 3/2/08 &
+email = dogslikefood@dogman.com &
+favoriteColor = pink &
+firstName = Snow &
+lastName = Ball
+
+###
+PUT https://ws341-contacts-project.onrender.com/66f367084eb6f1eda2c6341c
+Content-Type: application/x-www-form-urlencoded
+
+birthday = 3/12/15 &
+email = catsEatFood@kittykat.com &
+favoriteColor = pink &
+firstName = Snow &
+lastName = Ball
+
+
+
