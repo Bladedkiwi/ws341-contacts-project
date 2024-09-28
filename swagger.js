@@ -7,8 +7,16 @@ const doc = {
         },
         host:'https://ws341-contacts-project.onrender.com'
 }
-//https://ws341-contacts-project.onrender.com
-//localhost:8080
+
+//localhost doc
+// const doc = {
+//     info: {
+//         title: 'Contacts Directory and CRUD operations',
+//         description: 'Create, Retrieve, update, and delete any contact you desire.'
+//     },
+//     host:'localhost:8080'
+// }
+
 
 const outputFile = './swagger-output.json';
 
