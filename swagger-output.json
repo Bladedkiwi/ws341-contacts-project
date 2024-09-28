@@ -5,7 +5,7 @@
     "description": "Create, Retrieve, update, and delete any contact you desire.",
     "version": "1.0.0"
   },
-  "host": "https://ws341-contacts-project.onrender.com",
+  "host": "ws341-contacts-project.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"

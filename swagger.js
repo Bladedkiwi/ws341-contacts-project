@@ -5,7 +5,7 @@ const doc = {
         title: 'Contacts Directory and CRUD operations',
         description: 'Create, Retrieve, update, and delete any contact you desire.'
         },
-        host:'https://ws341-contacts-project.onrender.com'
+        host:'ws341-contacts-project.onrender.com'
 }
 
 //localhost doc
