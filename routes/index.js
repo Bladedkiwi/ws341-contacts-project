@@ -1,6 +1,9 @@
 const express = require('express');
 const contactController = require('../controllers/contacts');
 const router = express.Router();
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('../swagger-output.json');
+
 
 
 //Base Route
@@ -14,5 +17,8 @@ router.get('/contact/:id', contactController.getById);
 router.put('/contact/:id', contactController.updateById);
 router.delete('/contact/:id', contactController.deleteById);
 
+//Development Debug Routes
+router.use('/api-docs', swaggerUi.serve);
+router.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
 module.exports = router;
